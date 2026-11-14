@@ -5,7 +5,7 @@ import org.sahith.products.models.Product;
 import java.util.List;
 
 public interface ProductsService {
-    Product getProduct(long id);
-    Product replaceProduct(long id, Product product);
+    Product getProduct(Long id);
+    Product replaceProduct(Long id, Product product);
     List<Product> getAllProducts();
 }

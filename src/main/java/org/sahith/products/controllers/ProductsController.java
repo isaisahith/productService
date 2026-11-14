@@ -20,7 +20,7 @@ public class ProductsController {
 
 
     @GetMapping("/{id}")
-    public ProductDto getProduct(@PathVariable long id){
+    public ProductDto getProduct(@PathVariable Long id){
 
         if(id<0){
             throw new IllegalArgumentException();
@@ -35,7 +35,7 @@ public class ProductsController {
     }
 
     @PutMapping("/{id}")
-    public ProductDto replaceProduct(@PathVariable long id, @RequestBody ProductDto productDto){
+    public ProductDto replaceProduct(@PathVariable Long id, @RequestBody ProductDto productDto){
         if(id<0){
             throw new IllegalArgumentException();
         }

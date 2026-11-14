@@ -29,7 +29,7 @@ public class IProductService implements ProductsService{
     private FakeStoreApiClient fakeStoreApiClient;
 
     @Override
-    public Product getProduct(long id) {
+    public Product getProduct(Long id) {
 
         FakeStoreProductDto fakeStoreProductDto=  fakeStoreApiClient.getByProductId(id);
         if(fakeStoreProductDto!=null){
@@ -39,7 +39,7 @@ public class IProductService implements ProductsService{
 
     }
 
-    public Product replaceProduct(long id, Product product){
+    public Product replaceProduct(Long id, Product product){
         FakeStoreProductDto fakeStoreProductDto = from(product);
         FakeStoreProductDto responseFakeStoreProductDto = fakeStoreApiClient.replaceProduct(id, fakeStoreProductDto);
         if(fakeStoreProductDto!=null){
