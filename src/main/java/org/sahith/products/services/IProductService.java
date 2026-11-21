@@ -4,8 +4,11 @@ import org.sahith.products.clients.FakeStoreApiClient;
 import org.sahith.products.dtos.FakeStoreProductDto;
 import org.sahith.products.models.Category;
 import org.sahith.products.models.Product;
+import org.sahith.products.repositories.CategoryRepo;
+import org.sahith.products.repositories.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +30,12 @@ public class IProductService implements ProductsService{
 
     @Autowired
     private FakeStoreApiClient fakeStoreApiClient;
+
+    @Autowired
+    private ProductRepo productRepo;
+
+    @Autowired
+    private CategoryRepo categoryRepo;
 
     @Override
     public Product getProduct(Long id) {
@@ -63,6 +72,14 @@ public class IProductService implements ProductsService{
 
     }
 
+    public Product addProduct(Product product){
+        return null;
+    }
+
+    @Override
+    public void deleteProduct(Long id) {
+
+    }
 
 
     public Product from(FakeStoreProductDto fakeStoreProductDto){
